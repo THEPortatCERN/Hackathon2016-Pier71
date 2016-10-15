@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      History
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let item of medicine" [style.background-color]="item.getStatusColor()">
+    <img src="img/{{item.img}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.title}}
+      </ion-card-title>
+      <ul>
+        <li>Producer: {{item.producer}}</li>
+        <li>Produced: {{item.date_produced | dateFormat}}</li>
+        <li>Scanned: {{item.date_scanned | dateFormat}}</li>
+        <li>Expire: {{item.date_expire | dateFormat}}</li>
+        <li>Status: {{item.getStatus()}}</li>
+      </ul>
+      <button (click)="itemTapped($event, item)" class="button button-full button-stable">More info</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

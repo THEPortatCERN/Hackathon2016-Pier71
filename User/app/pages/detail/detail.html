@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{medicine.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <img src="img/{{medicine.img}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{medicine.title}}
+        </ion-card-title>
+      <ul>
+        <li>Producer: {{medicine.producer}}</li>
+        <li>Produced: {{medicine.date_produced | dateFormat}}</li>
+        <li>Scanned: {{medicine.date_scanned | dateFormat}}</li>
+        <li>Expire: {{medicine.date_expire | dateFormat}}</li>
+        <li>Status: {{medicine.getStatus()}}</li>
+      </ul>
+      <p>{{medicine.description}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let item of transactions">
+    <ion-card-content>
+      <ion-card-title>
+        {{item.action}}
+        </ion-card-title>
+      <ul>
+        <li>Entity: {{item.entity_name}}</li>
+        <li>Date: {{item.date | dateFormat}}</li>
+        <li>GPS: {{item.gps}}</li>
+        <li>Comment: {{item.comment}}</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
