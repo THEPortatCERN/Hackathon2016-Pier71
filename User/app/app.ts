@@ -5,11 +5,12 @@ import { StatusBar }                 from 'ionic-native';
 import { TabsPage }           from './pages/tabs/tabs';
 import { MedicineService }    from './providers/medicine.service';
 import { TransactionService } from './providers/transaction.service';
+import { PublicKeyService } from './providers/public_key.service';
 
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
-  providers: [MedicineService, TransactionService]
+  providers: [MedicineService, TransactionService, PublicKeyService]
 })
 export class MyApp {
 
